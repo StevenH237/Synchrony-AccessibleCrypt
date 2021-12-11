@@ -1,0 +1,15 @@
+{
+	"name": "AccessibleCrypt",
+	"displayName": "Accessible Crypt",
+	"version": "1.0.0",
+	"synchronyVersion": "0.47",
+	"description": "Accessibility features - slowdown and turbo.",
+	"author": "Nixill",
+	"dependencies": {},
+	"api": {
+		"scriptPath": "scripts"
+	},
+	"icon": "AccessibleCryptIcon.png",
+	"banner": "AccessibleCryptBanner.png",
+	"tags": []
+}
