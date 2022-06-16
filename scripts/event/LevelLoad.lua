@@ -3,9 +3,9 @@ local Event        = require "necro.event.Event"
 local Music        = require "necro.audio.Music"
 local TimeScale    = require "necro.audio.TimeScale"
 
-local ACSettings = require "AccessibleCrypt.ACSettings"
+local ACSettings = require "AccessibleCrypt.Settings"
 
-Event.levelLoad.add("slowdown", {order="music", sequence=2}, function(ev)
+Event.levelLoad.add("slowdown", { order = "music", sequence = 2 }, function(ev)
   -- Ignore in lobby levels
   if CurrentLevel.isLobby() then return end
 
@@ -25,4 +25,3 @@ Event.levelLoad.add("slowdown", {order="music", sequence=2}, function(ev)
   -- Add the slowdown
   TimeScale.addInfiniteRegion(0, scale, 0)
 end)
-
