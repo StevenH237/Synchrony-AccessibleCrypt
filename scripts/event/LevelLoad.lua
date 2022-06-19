@@ -11,8 +11,18 @@ Event.levelLoad.add("slowdown", { order = "music", sequence = 2 }, function(ev)
 
   -- Get current song BPM
   local beatmap = Music.getBeatmap()
-  local tpb = beatmap[2] - beatmap[1]
-  local bpm = 60 / tpb
+
+  local deltas = {}
+  local lastTimes = { 0, 0, 0 }
+  for i, v in ipairs(beatmap) do
+    deltas[#deltas + 1] = v - lastTimes[1]
+    table.remove(lastTimes, 1)
+    table.insert(lastTimes, v)
+  end
+
+  table.sort(deltas)
+  local tpb = deltas[math.ceil(#deltas / 2)]
+  local bpm = (#lastTimes * 60) / tpb
 
   -- Fixed percentage slowdown
   local scale = ACSettings.SlowdownSpeed

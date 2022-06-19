@@ -2,7 +2,7 @@
 	"name": "AccessibleCrypt",
 	"displayName": "Accessible Crypt",
 	"version": "1.0.0",
-	"synchronyVersion": "0.47",
+	"synchronyVersion": "3.0.0",
 	"description": "Accessibility features - slowdown and turbo.",
 	"author": "Nixill",
 	"dependencies": {},
